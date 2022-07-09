@@ -1,0 +1,362 @@
+"options_android"
+{
+//
+// BASIC OPTIONS
+//
+
+	"Game Volume"
+	{
+		"name"		"#GameUI_SoundEffectVolume"
+		"convar"	"volume"
+		"priority"	"0200"
+		"type"		"slider"
+		"minvalue"	"0.0"
+		"maxvalue"	"1.0"
+		"sliderhome"	"max"
+	}
+	"Music Volume"
+	{
+		"name"		"#GameUI_MusicVolume"
+		"convar"	"Snd_MusicVolume"
+		"priority"	"0300"
+		"type"		"slider"
+		"minvalue"	"0.0"
+		"maxvalue"	"1.0"
+		"sliderhome"	"max"
+	}
+	"English Vocals"
+	{
+		"vocalslanguage"	"1"
+
+		"name"		"#GAMEUI_AudioSpokenLanguage"
+		"convar"	"x360_audio_english"
+		"priority"	"0350"
+		"type"		"choice"
+	}
+	"Captions"
+	{
+		"name"		"#GameUI_Captioning"
+		"convar"	"closecaption"
+		"convar2"	"cc_subtitles"
+		"priority"	"0400"
+		"type"		"choice"
+		"choices"
+		{
+			"#GameUI_NoClosedCaptions"			"0;0"
+			"#GameUI_SubtitlesAndSoundEffects"	"1;0"
+			"#GameUI_Subtitles"					"1;1"
+		}
+	}
+// disabling this feature because of filtering artifacts with the scaled blit
+//	"Screen Border" [$NX]
+//	{
+//		"name"          "Screen border"
+//		"textAlignment" "west"
+//		"convar"        "gl_borderscale"
+//		"priority"      "0450"
+//		"type"          "slider"
+//		"minvalue"      “0.0”
+//		"maxvalue"      "1.0"
+//		"sliderhome"    "max"
+//	}
+	
+	"Brightness"
+	{
+		"name"		"#GameUI_Brightness"
+		"convar"	"mat_monitorgamma"
+		"priority"	"0700"
+		"type"		"slider"
+		"minvalue"	"1.8"
+		"maxvalue"	"2.6"
+		"incvalue"	"-1.0"
+		"sliderhome"	"center"
+	}
+	
+	"Cheats"
+	{
+		"name"		"Cheats (dev only)"
+		"convar"	"sv_cheats"
+		"priority"	"0800"
+		"type"		"binary"
+	}
+	
+	"Game Speed"
+	{
+		"name"		"*GAME SPEED MULTIPLIER*"
+		"convar"	"host_timescale"
+		"convar_def"	"host_timescale 1"
+		"priority"	"805"
+		"type"		"slider"
+		"minvalue"	"0.1"
+		"maxvalue"	"5"
+		"sliderhome"	"prev"
+	}
+	
+	"Wireframe"
+	{
+		"name"		"Wireframe (dev only)"
+		"convar"	"mat_wireframe"
+		"priority"	"0900"
+		"type"		"choice"
+		"choices"
+		{
+			"Off"		"0"
+			"On"		"1"
+			"Mode 2"	"2"
+			"Mode 3"	"3"
+		}
+	}
+
+//
+// CONTROL OPTIONS
+//
+
+	"Look Type"
+	{
+		"control"	"1"
+
+		"name"		"#GameUI_JoystickLookType"
+		"convar"	"joy_inverty"
+		"convar_def"	"joy_inverty_default"
+		"priority"	"1200"
+		"type"		"choice"
+		"choices"
+		{
+			"#GameUI_JoystickNormal"	"0"
+			"#GameUI_JoystickInverted"	"1"
+		}
+	}
+	"Move/Look Sticks"
+	{
+		"control"	"1"
+
+		"name"		"#GameUI_JoystickMoveLookSticks"
+		"convar"	"joy_movement_stick"
+		"convar_def"	"joy_movement_stick_default"
+		"priority"	"1300"
+		"type"		"choice"
+		"choices"
+		{
+			"#GameUI_JoystickNormal"	"0"
+			"#GameUI_JoystickSouthpaw"	"1"
+		}
+	}
+	"Duck Mode"
+	{
+		"control"	"1"
+
+		"name"		"#GameUI_JoystickDuckMode"
+		"convar"	"option_duck_method"
+		"convar_def"	"option_duck_method_default"
+		"priority"	"1400"
+		"type"		"choice"
+		"choices"
+		{
+			"#GameUI_Hold"		"0"
+			"#GameUI_Toggle"	"1"
+		}
+	}
+	"Sprint Mode"
+	{
+		"control"	"1"
+
+		"name"		"#GameUI_JoystickSprintMode"
+		"convar"	"sv_stickysprint"
+		"convar_def"	"sv_stickysprint_default"
+		"priority"	"1450"
+		"type"		"binary"
+	}
+	"Horizontal Look Speed"
+	{
+		"control"	"1"
+
+		"name"		"#GameUI_JoystickLookSpeedYaw"
+		"convar"	"joy_yawsensitivity"
+		"convar_def"	"joy_yawsensitivity_default"
+		"priority"	"1500"
+		"type"		"slider"
+		"minvalue"	"-3.5"
+		"maxvalue"	"-0.25"
+		"incvalue"	"-1.0"
+		"sliderhome"	"prev"
+	}
+	"Vertical Look Speed"
+	{
+		"control"	"1"
+
+		"name"		"#GameUI_JoystickLookSpeedPitch"
+		"convar"	"joy_pitchsensitivity"
+		"convar_def"	"joy_pitchsensitivity_default"
+		"priority"	"1600"
+		"type"		"slider"
+		"minvalue"	"0.25"
+		"maxvalue"	"3.5"
+		"sliderhome"	"prev"
+	}
+	
+	"Vibrations" // Extra setting for controller vibration strength
+	{
+		"control"	"1"
+		
+		"name"		"#GameUI_VibrationStrength"
+		"convar"	"cl_rumblescale"
+		"convar_def"	"cl_rumblescale_default"
+		"priority"	"1650"
+		"type"		"slider"
+		"minvalue"	"0.0"
+		"maxvalue"	"1.0"
+		"sliderhome"	"prev"
+	}
+	
+	"Portal Placement"
+	{
+		"control"	"1"
+
+		"name"		"*PLACE PORTALS ANYWHERE*"
+		"convar"	"sv_portal_placement_never_fail"
+		"priority"	"1660"
+		"type"		"binary"
+	}
+	
+	"Show FPS"
+	{
+		"control"	"1"
+
+		"name"		"*SHOW FPS*"
+		"convar"	"cl_showfps"
+		"priority"	"1670"
+		"type"		"binary"
+	}
+
+	"Bind Primary"
+	{
+		"control"	"1"
+
+		"name"		"#Valve_Primary_Attack"
+		"command"	"+attack"
+		"priority"	"1700"
+		"type"		"bind"
+	}
+	"Bind Secondary"
+	{
+		"control"	"1"
+
+		"name"		"#Valve_Secondary_Attack"
+		"command"	"+attack2"
+		"priority"	"1800"
+		"type"		"bind"
+	}
+
+	"Bind Use"
+	{
+		"control"	"1"
+
+		"name"		"#Valve_Pickup_Use_Objects"
+		"command"	"+use"
+		"priority"	"1900"
+		"type"		"bind"
+	}
+	
+	"Bind Jump"
+	{
+		"control"	"1"
+
+		"name"		"#Valve_Jump"
+		"command"	"+jump"
+		"priority"	"2200"
+		"type"		"bind"
+	}
+	"Bind Duck"
+	{
+		"control"	"1"
+
+		"name"		"#Valve_Duck"
+		"command"	"+duck"
+		"priority"	"2300"
+		"type"		"bind"
+	}
+	
+	//bringus menu binds
+	
+	"Bind Noclip"
+	{
+		"control"	"1"
+
+		"name"		"*NOCLIP*"
+		"command"	"noclip;play /buttons/button9"
+		"priority"	"2400"
+		"type"		"bind"
+	}
+	"Bind Fire Rocket"
+	{
+		"control"	"1"
+
+		"name"		"*FIRE ROCKET*"
+		"command"	"exec rocket"
+		"priority"	"2500"
+		"type"		"bind"
+	}
+	"Bind God"
+	{
+		"control"	"1"
+
+		"name"		"*GOD*"
+		"command"	"god;play /buttons/button9"
+		"priority"	"2600"
+		"type"		"bind"
+	}
+	"Bind Cube"
+	{
+		"control"	"1"
+
+		"name"		"*CREATE CUBE*"
+		"command"	"ent_create_portal_weight_box"
+		"priority"	"2700"
+		"type"		"bind"
+	}
+	"Bind Zombie"
+	{
+		"control"	"1"
+
+		"name"		"*SPAWN ZOMBIE*"
+		"command"	"npc_create npc_zombie;play /buttons/button9"
+		"priority"	"2800"
+		"type"		"bind"
+	}
+	"Bind Alyx"
+	{
+		"control"	"1"
+
+		"name"		"*SPAWN ALYX*"
+		"command"	"npc_create npc_alyx;play /buttons/button9"
+		"priority"	"2900"
+		"type"		"bind"
+	}
+	"Bind Gman"
+	{
+		"control"	"1"
+
+		"name"		"*SPAWN GMAN*"
+		"command"	"npc_create npc_gman;play /buttons/button9"
+		"priority"	"3000"
+		"type"		"bind"
+	}
+	"Bind Jeep"
+	{
+		"control"	"1"
+
+		"name"		"*SPAWN JEEP*"
+		"command"	"impulse 82;play /buttons/button9"
+		"priority"	"3100"
+		"type"		"bind"
+	}
+	"Bind Airboat"
+	{
+		"control"	"1"
+
+		"name"		"*SPAWN AIRBOAT*"
+		"command"	"impulse 83;play /buttons/button9"
+		"priority"	"3200"
+		"type"		"bind"
+	}
+}

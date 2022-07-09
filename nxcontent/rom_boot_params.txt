@@ -1,0 +1,16 @@
+dummyExeName
+-game
+portal
+-glshadersSaveFS
+-nosteam
++mat_queue_mode
+2
++mat_picmip
+0
+-ignoredxsupportcfg
+-dxlevel
+90
++r_flashlightdepthtexture
+1
++r_portal_stencil_depth
+2
